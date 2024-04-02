@@ -27,7 +27,7 @@ function(input, output, session) {
         labs(x = 'Comprimento de sépalas (cm)',
              y = 'Frequência',
              title = 'Dados Iris') +
-          theme_bw()
+          theme_minimal()
     })
 
 }
