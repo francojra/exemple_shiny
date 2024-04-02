@@ -23,7 +23,7 @@ fluidPage(
                         "Número de bins:",
                         min = 1,
                         max = 50,
-                        value = 30)
+                        value = 30) # 30 é o valor padrão na tela antes de ser definido pelo usuário
         ),
 
         # Show a plot of the generated distribution
