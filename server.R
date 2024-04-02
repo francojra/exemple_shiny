@@ -23,9 +23,11 @@ function(input, output, session) {
         # draw the histogram with the specified number of bins
         ggplot2::ggplot(dados_iris, aes(x = x)) +
           geom_histogram(breaks = bins,
-                        col = 'forestgreen', border = 'white') +
+                        fill = 'forestgreen', color = 'white') +
         labs(x = 'Comprimento de sépalas (cm)',
-             title = 'Dados Iris')
+             y = 'Frequência',
+             title = 'Dados Iris') +
+          theme_bw()
     })
 
 }
