@@ -9,6 +9,7 @@
 
 library(shiny)
 library(dados)
+library(ggplot2)
 
 # Define server logic required to draw a histogram
 function(input, output, session) {
@@ -20,10 +21,11 @@ function(input, output, session) {
         bins <- seq(min(x), max(x), length.out = input$bins + 1)
 
         # draw the histogram with the specified number of bins
-        hist(x, breaks = bins, col = 'darkgray', border = 'white',
-             xlab = 'Comprimento de sépalas (cm)',
-             main = 'Dados Iris')
-
+        ggplot2::ggplot(dados_iris, aes(x = x)) +
+          geom_histogram(breaks = bins,
+                        col = 'forestgreen', border = 'white') +
+        labs(x = 'Comprimento de sépalas (cm)',
+             title = 'Dados Iris')
     })
 
 }
